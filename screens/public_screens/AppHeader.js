@@ -2,6 +2,7 @@ import React, {useMemo} from 'react';
 import {View, StyleSheet, TouchableOpacity, Image, Share,Alert} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {Icon} from '@rneui/themed';
+import Icons from '../../components/Icons';
 
 const AppHeader = ({}) => {
   const {colors} = useTheme();
@@ -17,7 +18,7 @@ const AppHeader = ({}) => {
         if (result.activityType) {
           //Alert.alert('trest');
         } else {
-          Alert.alert('Uygulama Paylaşıldı');
+          // Alert.alert('Uygulama Paylaşıldı');
         }
       } else if (result.action === Share.dismissedAction) {
         // dismissed
@@ -35,13 +36,9 @@ const AppHeader = ({}) => {
         style={{width: 60, height: 60}}
       />
       <TouchableOpacity>
-        <Icon
-          name="share-google"
-          onPress={onShare}
-          size={50}
-          type="evilicon"
-          color={colors.text}
-        />
+        <Icons.Share 
+        onPress={onShare}
+        width={30} height={30}/>
       </TouchableOpacity>
     </View>
   );

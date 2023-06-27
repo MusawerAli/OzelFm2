@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {Card} from '@rneui/themed';
-import {Icon} from '@rneui/base';
+import Icons from '../../components/Icons';
 
 export const About = () => {
   const {colors} = useTheme();
@@ -45,13 +45,7 @@ export const About = () => {
         </Text>
         {/* //adress */}
         <View style={styles.textIconMain}>
-          <Icon
-            onPress={openInMaps}
-            name="location-pin"
-            type="material-icons"
-            color={colors.primary}
-          />
-
+        <Icons.Marker width={28} height={27}/>
           <Text onPress={openInMaps} style={styles.heading_child}>
             Adres
           </Text>
@@ -67,12 +61,7 @@ export const About = () => {
 
         {/* //phone */}
         <View style={styles.textIconMain}>
-          <Icon
-            onPress={callContact}
-            name="phone"
-            type="material-icons"
-            color={colors.primary}
-          />
+        <Icons.PhoneActive width={28} height={27}/>
           <Text onPress={callContact} style={styles.heading_child}>
             Telefon
           </Text>
@@ -86,7 +75,7 @@ export const About = () => {
 
         {/* //email */}
         <View style={styles.textIconMain}>
-          <Icon name="email" type="material-icons" color={colors.primary} />
+        <Icons.MailActive width={28} height={27}/>
           <Text onPress={sendEmail} style={styles.heading_child}>
             Eposta
           </Text>

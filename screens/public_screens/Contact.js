@@ -123,23 +123,6 @@ export const Contact = ({
 
   return (
     <ScrollView>
-      {/* {Boolean(request_common_success_response) && (
-        <AlertComponent
-          title={'Başarı'}
-          msg={request_common_success_response}
-          cancelable={true}
-          onDismiss={() => requestCommonSuccessResponse(false)}
-        />
-      )}
-
-      {Boolean(request_common_error_response) && (
-        <AlertComponent
-          title={'Hata'}
-          msg={request_common_error_response}
-          cancelable={true}
-          onDismiss={() => requestCommonErrorResponse(false)}
-        />
-      )} */}
 
       <View style={styles.main}>
         <Text style={styles.heading}>Özel Fm İstek</Text>

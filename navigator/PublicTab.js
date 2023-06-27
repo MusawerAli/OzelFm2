@@ -9,6 +9,7 @@ import BroadCasting from '../screens/public_screens/BroadCasting';
 import LIsten from '../screens/public_screens/LIsten';
 import {useDispatch,useSelector} from 'react-redux';
 import {setPlay} from '../screens/public_screens/redux/actions';
+import Icons from '../components/Icons';
 const Tab = createBottomTabNavigator();
 
 const PublicTab = () => {
@@ -18,7 +19,7 @@ const PublicTab = () => {
   const styles = useMemo(() => makeStyles(colors), [colors]);
   return (
     <Tab.Navigator
-      initialRouteName="broadcasting"
+      initialRouteName="listen"
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
@@ -37,11 +38,7 @@ const PublicTab = () => {
           tabBarLabel: 'Updates',
           tabBarIcon: ({focused, color, size}) => (
             <View style={styles.tabsView}>
-              <Icon
-                name="radio"
-                // type='evilicon'
-                color={color}
-              />
+              {focused?<Icons.RadioActive width={28} height={27}/>:<Icons.Radio width={28} height={27}/>}
               <Text
                 style={[
                   styles.text,
@@ -61,7 +58,8 @@ const PublicTab = () => {
           tabBarLabel: 'broadcasting',
           tabBarIcon: ({focused, color, size}) => (
             <View style={styles.tabsView}>
-              <Icon name="calendar" type="evilicon" color={color} />
+              {focused?<Icons.CalandarActive width={28} height={27}/>:<Icons.Calandar width={28} height={27}/>}
+              
               <Text
                 style={[
                   styles.text,
@@ -86,14 +84,8 @@ const PublicTab = () => {
                 justifyContent: 'center',
                 alignContent: 'center',
               }}>
-              <Icon
-                onPress={() => dispatch(setPlay(!playing))}
-                reverse
-                solid="true"
-                name={playing?"pause-circle-outline":"play-circle-filled"} 
-                type="material-icons"
-                color={colors.primary}
-              />
+                {playing?<Icons.Pause onPress={() => dispatch(setPlay(!playing))} width={100} height={100}/>:<Icons.PlayBlack onPress={() => dispatch(setPlay(!playing))} width={100} height={100}/>}
+                
             </TouchableOpacity>
           ),
         }}
@@ -105,11 +97,7 @@ const PublicTab = () => {
           tabBarLabel: 'contact',
           tabBarIcon: ({focused, color, size}) => (
             <View style={styles.tabsView}>
-              <Icon
-                name="email"
-                type="material-icons"
-                color={color}
-              />
+             {focused?<Icons.MailActive width={28} height={27}/>:<Icons.Mail width={28} height={27}/>}
               <Text
                 style={[
                   styles.text,
@@ -130,7 +118,7 @@ const PublicTab = () => {
           tabBarLabel: 'about',
           tabBarIcon: ({focused, color, size}) => (
             <View style={styles.tabsView}>
-              <Icon name="phone" type="material-icons" color={color} />
+              {focused?<Icons.PhoneActive width={26} height={26}/>:<Icons.Phone width={26} height={26}/>}
               <Text
                 style={[
                   styles.text,

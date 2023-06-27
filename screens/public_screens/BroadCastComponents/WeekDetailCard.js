@@ -3,13 +3,11 @@ import {
   Text,
   View,
   StyleSheet,
-  ScrollView,
   Image,
   Dimensions,
 } from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {color} from '@rneui/base';
-// import {Image} from '@rneui/themed';
 export const WeekDetailCard = ({val}) => {
   const dimessions = Dimensions.get('window');
   const {colors} = useTheme();

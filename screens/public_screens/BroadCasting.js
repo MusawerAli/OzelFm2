@@ -7,7 +7,7 @@ import {ChipComponent} from '../../components/CommonComponents';
 import StepIndicator from 'react-native-step-indicator';
 import WeekDetailCard from './BroadCastComponents/WeekDetailCard';
 import {requestWeekData} from './redux/actions';
-import {Icon} from '@rneui/base';
+import Icons from '../../components/Icons';
 
 const customStyles = {
   stepIndicatorSize: 25,
@@ -112,7 +112,7 @@ export const BroadCasting = ({weekData, requestWeekData, nowData}) => {
             direction="vertical"
             stepCount={labels.length}
             renderStepIndicator={({position, stepStatus}) => {
-              return (stepStatus === 'finished') ? <Icon name="check-circle" type="material-icons" /> : (stepStatus === 'current' ? <Icon name="live-tv" color="#2AAA8A" type="material-icons" /> : <Icon name="hearing" color="#fe7013" type="material-icons" />)
+              return (stepStatus === 'finished') ? <Icons.TickActive width={40} height={40}/> : (stepStatus === 'current' ? <Icons.Tick width={60} height={60}/> : <Icons.Tick width={60} height={60}/>)
             }}
           />
         </View>
