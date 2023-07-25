@@ -1,0 +1,4 @@
+adb uninstall com.ayakkabialdim.ozelfm
+./gradlew clean
+./gradlew assembleDebug
+npx react-native run-android

@@ -95,11 +95,11 @@ android {
 
     namespace "com.ozelfm"
     defaultConfig {
-        applicationId "com.ozelfm"
+        applicationId "com.ayakkabialdim.ozelfm"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 8
+        versionName "8.1"
     }
 
     splits {
@@ -117,10 +117,14 @@ android {
                 // storePassword MYAPP_UPLOAD_STORE_PASSWORD
                 // keyAlias MYAPP_UPLOAD_KEY_ALIAS
                 // keyPassword MYAPP_UPLOAD_KEY_PASSWORD
-               storeFile file('my-upload-key.keystore')
-                storePassword 'OzelAdmin'
-                keyAlias 'my-key-alias'
-                keyPassword 'OzelAdmin'
+                //  storeFile file('my-upload-key.keystore')
+                // storePassword 'OzelAdmin'
+                // keyAlias 'my-key-alias'
+                // keyPassword 'OzelAdmin'
+                storeFile file('elena.jks')
+                storePassword 'ElMa84574elma'
+                keyAlias 'yasemin_key'
+                keyPassword 'ElMa84574elma'
             // }
         }
         debug {
@@ -171,7 +175,7 @@ dependencies {
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.squareup.okhttp3', module:'okhttp'
     }
-
+    
     debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}")
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
