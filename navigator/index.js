@@ -51,16 +51,16 @@ const RootNavigationStack = ({playing,setConnection,connection}) => {
 
   const [splash, setSplash] = useState(true);
   useEffect(() => {
-    if (playing && !splash && connection?.isConnected && connection?.isInternetReachable) {
+    if (playing && !splash) {
       SoundPlayer.setVolume(0.5);
       SoundPlayer.playUrl('https://ozelfm.80.yayin.com.tr/;stream/1#.mp3');
     } else {
       SoundPlayer.stop();
     }
     return () => {
-      SoundPlayer.pause();
+      SoundPlayer.stop();
     };
-  }, [playing,splash,connection]);
+  }, [playing,splash]);
 
   setTimeout(() => {
     setSplash(false);
