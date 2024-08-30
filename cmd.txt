@@ -1,4 +1,7 @@
 adb uninstall com.ayakkabialdim.ozelfm
 ./gradlew clean
 ./gradlew assembleDebug
+./gradlew bundleRelease
 npx react-native run-android
+
+LAST VERSION 11
